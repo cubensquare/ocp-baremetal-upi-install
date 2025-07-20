@@ -38,9 +38,9 @@
   * NIC: OCP Network
   * ISO: RHCOS
 
-* **Worker Nodes (2 nodes)**
+* **Worker Nodes (1 nodes)**
 
-  * Names: `ocp-w-1`, `ocp-w-2`
+  * Names: `ocp-w-1`
   * Specs same as control node
 
 * **Bootstrap Node**
