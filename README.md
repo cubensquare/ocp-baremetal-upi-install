@@ -134,7 +134,7 @@ dig -x 192.168.22.200
 
 ```bash
 dnf install dhcp-server -y
-cp ~/ocp4-metal-install/dhcpd.conf /etc/dhcp/dhcpd.conf
+cp ~/ocp-baremetal-upi-install/dhcpd.conf /etc/dhcp/dhcpd.conf
 firewall-cmd --add-service=dhcp --zone=internal --permanent
 firewall-cmd --reload
 systemctl enable --now dhcpd
@@ -159,7 +159,7 @@ curl localhost:8080
 
 ```bash
 dnf install haproxy -y
-cp ~/ocp4-metal-install/haproxy.cfg /etc/haproxy/haproxy.cfg
+cp ~/ocp-baremetal-upi-install/haproxy.cfg /etc/haproxy/haproxy.cfg
 firewall-cmd --add-port=6443/tcp --zone=internal --permanent
 firewall-cmd --add-port=6443/tcp --zone=external --permanent
 firewall-cmd --add-port=22623/tcp --zone=internal --permanent
@@ -193,7 +193,7 @@ systemctl enable --now nfs-server rpcbind nfs-mountd
 ```bash
 ssh-keygen
 mkdir ~/ocp-install
-cp ~/ocp4-metal-install/install-config.yaml ~/ocp-install
+cp ~/ocp-baremetal-upi-install/install-config.yaml ~/ocp-install
 # Edit pull secret and SSH key
 vim ~/ocp-install/install-config.yaml
 
@@ -279,7 +279,7 @@ oc edit configs.imageregistry.operator.openshift.io
 #     claim: ""
 
 oc get pvc -n openshift-image-registry
-oc create -f ~/ocp4-metal-install/manifest/registry-pv.yaml
+oc create -f ~/ocp-baremetal-upi-install/manifest/registry-pv.yaml
 oc get pvc -n openshift-image-registry
 ```
 
@@ -288,7 +288,7 @@ oc get pvc -n openshift-image-registry
 ## 🔑 Create First Admin User
 
 ```bash
-oc apply -f ~/ocp4-metal-install/manifest/oauth-htpasswd.yaml
+oc apply -f ~/ocp-baremetal-upi-install/manifest/oauth-htpasswd.yaml
 oc adm policy add-cluster-role-to-user cluster-admin admin
 ```
 
