@@ -94,6 +94,8 @@ git clone https://github.com/cubensquare/ocp-baremetal-upi-install
 ```bash
 nmcli connection modify ens33 connection.zone internal
 nmcli connection modify ens37 connection.zone external
+firewall-cmd --get-active-zones
+firewall-cmd --set-default-zone=internal
 firewall-cmd --zone=external --add-masquerade --permanent
 firewall-cmd --zone=internal --add-masquerade --permanent
 firewall-cmd --reload
