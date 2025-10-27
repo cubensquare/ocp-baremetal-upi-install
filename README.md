@@ -117,6 +117,12 @@ systemctl enable --now named
 
 Edit LAN NIC DNS to `127.0.0.1` and test with:
 
+nmtcui edit ens33 
+## set the DNS server to local and add the domain name 
+## DNS server : 127.0.0.1
+## search domain : ocp.lan
+## Enable 'ignore automatically obtained DNS parameter'
+
 ```bash
 dig ocp.lan
 dig -x 192.168.22.200
