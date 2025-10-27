@@ -107,8 +107,8 @@ firewall-cmd --reload
 
 ```bash
 dnf install bind bind-utils -y
-cp ~/ocp4-metal-install/dns/named.conf /etc/named.conf
-cp -R ~/ocp4-metal-install/dns/zones /etc/named/
+cp ~/ocp-baremetal-upi-install/dns/named.conf /etc/named.conf
+cp -R ~/ocp-baremetal-upi-install/dns/zones /etc/named/
 firewall-cmd --add-port=53/udp --zone=internal --permanent
 firewall-cmd --add-port=53/tcp --zone=internal --permanent
 firewall-cmd --reload
