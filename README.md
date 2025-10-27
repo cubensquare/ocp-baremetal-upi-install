@@ -83,7 +83,7 @@ git clone https://github.com/cubensquare/ocp-baremetal-upi-install
 
 ### ⚖️ Set Static IP (using nmtui)
 
-* Interface: `ens33`
+* Interface: `ens36`
 * Address: `192.168.22.1`
 * DNS: `127.0.0.1`
 * Domain: `ocp.lan`
