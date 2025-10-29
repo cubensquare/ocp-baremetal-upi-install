@@ -138,6 +138,7 @@ cp ~/ocp-baremetal-upi-install/dhcpd.conf /etc/dhcp/dhcpd.conf
 firewall-cmd --add-service=dhcp --zone=internal --permanent
 firewall-cmd --reload
 systemctl enable --now dhcpd
+dhcpd -t -cf /etc/dhcp/dhcpd.conf
 ```
 
 ---
