@@ -83,7 +83,7 @@ git clone https://github.com/cubensquare/ocp-baremetal-upi-install
 
 ### ⚖️ Set Static IP (using nmtui)
 
-nmcli connection add con-name ens36 ifname ens36 type ethernet
+nmcli connection add con-name ens36 ifname ens36 type ethernet autoconnect yes ip4 192.168.22.1/24 
 * Interface: `ens36`
 * Address: `192.168.22.1`
 * DNS: `127.0.0.1`
